@@ -12,5 +12,20 @@ make
 ```
 Then to run the game type:
 ```
-./snake.out
+./snake
+```
+
+If you want to install it use:
+```
+make install
+```
+
+Then, you can open the game from every folder in the terminal, typing:
+```
+snake
+```
+
+If you want to remove the game, use:
+```
+make remove
 ```
