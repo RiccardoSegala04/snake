@@ -4,7 +4,7 @@ CFLAGS = -g -Wall
 INCLUDE = include
 SOURCE = src
 LIBRARIES = ncurses
-BIN = bin
+BIN = /usr/local/bin
 TARGET = snake
 
 default: build
@@ -24,9 +24,9 @@ clean:
 install:
 	if[ -f "/usr/local/bin/snake" ]
 	then
-	make remove
-	cp ./snake /usr/local/bin/
+	rm $(BIN)/$(TARGET)
 	fi
+	cp ./$(TARGET) $(BIN)
 
 remove:
-	rm /usr/local/bin/snake
+	rm $(BIN)/$(TARGET)
