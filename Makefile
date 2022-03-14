@@ -6,11 +6,13 @@ SOURCE = src
 LIBRARIES = ncurses
 BIN = bin
 TARGET = snake
+DEST = /usr/local/bin
+RM = rm
 
 default: build
 
 build:
-	mkdir bin
+	mkdir $(BIN)
 	$(CC) $(CFLAGS) -I $(INCLUDE) -c src/*.c
 	$(CC) *.o -l$(LIBRARIES) -o $(TARGET)
 	mv *.o $(BIN)
@@ -19,11 +21,11 @@ run:
 	./$(TARGET)
 
 clean:
-	rm $(TARGET)
-	rm -r $(BIN)
+	$(RM) $(TARGET)
+	$(RM) -r $(BIN)
 
 install:
-	cp ./snake /usr/local/bin/
+	cp ./$(TARGET) $(DEST)
 
 remove:
-	rm /usr/local/bin/snake
+	$(RM) $(DEST)/$(TARGET)
