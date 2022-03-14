@@ -10,6 +10,7 @@ TARGET = snake
 default: build
 
 build:
+	mkdir bin
 	$(CC) $(CFLAGS) -I $(INCLUDE) -c src/*.c
 	$(CC) *.o -l$(LIBRARIES) -o $(TARGET)
 	mv *.o $(BIN)
@@ -19,14 +20,10 @@ run:
 
 clean:
 	rm $(TARGET)
-	rm $(BIN)/*.o
+	rm -r $(BIN)
 
 install:
-	if[ -f "/usr/local/bin/snake" ]
-	then
-	make remove
 	cp ./snake /usr/local/bin/
-	fi
 
 remove:
 	rm /usr/local/bin/snake
