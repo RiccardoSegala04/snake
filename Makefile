@@ -29,4 +29,4 @@ install:
 	fi
 
 remove:
-	rm /usr/local/bin
+	rm /usr/local/bin/snake
