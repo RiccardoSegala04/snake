@@ -1,31 +1,39 @@
-snake
-=====
+# SNAKE
 
-The simplest snake game written in C.
+## Introduction
+The simplest game for Unix-like operating systems, written in C.
+Running `snake` require `ncurses` libraries.
 
-You need ncurses to be installed to compile this program.
+## Build instruction
+List of build-time dependencies:
+- `gcc`
+- `make`
+- `ncurses` 
 
-You can compile it with:
+Install these and other required packages for C development from your package manager.
 
-```
-make
-```
-Then to run the game type:
-```
-./snake
-```
+**Debian/Ubuntu**
+~~~shell
+sudo apt-get install build-essential ncurses-dev
+~~~
+**Fedora/RHEL**
+~~~shell
+sudo dnf install gcc ncurses-devel
+~~~
+**Arch**
+~~~shell
+sudo pacman -Sy base-devel ncurses
+~~~
 
-If you want to install it use:
-```
-make install
-```
+### Compile from source:
+To compile from source, download this repository using `git` (or download the zip file from GitHub), enter the directory and then run `make`
 
-Then, you can open the game from every folder in the terminal, typing:
-```
-snake
-```
+### Install
+If you want to install `snake` run `sudo make install`. By default, `make install` install into `/usr/local/bin`.
 
-If you want to remove the game, use:
-```
-make remove
-```
+If you want to remove `snake` run `sudo make remove`
+
+## License
+GNU General Public License, Version 3 (GPL-3.0)
+
+
